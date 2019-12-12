@@ -15,17 +15,20 @@ end
 def gross_for_director(d)
   total = 0
   index = 0
-
   while index < d[:movies].length do
     total += d[:movies][index][:worldwide_gross]
     index += 1
   end
-
   total
 end
 
-def list_of_directors(source)
-  # Write this implementation
+def list_of_directors(source1)
+  result = []
+  counter = 0
+  while counter < source.length
+    result << source[counter][:name]
+    counter += 1
+  end
 end
 
 def total_gross(source)
@@ -41,3 +44,4 @@ def total_gross(source)
 end
 
 
+list_of_directors(directors_database)
