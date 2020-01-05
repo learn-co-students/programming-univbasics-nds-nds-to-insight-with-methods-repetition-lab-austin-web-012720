@@ -26,6 +26,13 @@ end
 
 def list_of_directors(source)
   # Write this implementation
+  index = 0 
+  list = []
+  while index < source.length do 
+    list << source[index][:name]
+    index += 1 
+  end 
+  list
 end
 
 def total_gross(source)
@@ -38,6 +45,21 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
+  
+  # Why create additional vars that burry what is being worked on deeper? :
+    #director_earnings = directors_totals(source)
+    #directors_names = list_of_directors(source)
+  
+  i = 0 
+  total_gross = 0 
+  
+  while i < list_of_directors(source).length do 
+    dirName = list_of_directors(source)[i]
+    total_gross += directors_totals(source)[dirName]
+    i += 1 
+  end 
+  
+  total_gross
 end
 
 
